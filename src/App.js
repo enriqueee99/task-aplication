@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { TaskCreator } from "./components/TaskCreator";
 
 function App() {
-const [tasksItems, setTaskItems] = useState([
-  {name: 'mi primer tarea', done: false},
-  {name: 'mi segunda tarea', done: false},
-  {name: 'mi tercera tarea', done: false}
-])
+//elimine los objetos de ejemplo
+  const [tasksItems, setTaskItems] = useState([]);
+
 
 function createNewTask(taskName) {
   if(!tasksItems.find(task => task.name === taskName)){
@@ -16,6 +15,16 @@ function createNewTask(taskName) {
     alert('esta tarea ya esta creada')
   }
 }
+  useEffect(() =>{
+      let data = localStorage.getItem('task') //si hay algo en LS, conviertelo a js
+      if(data){
+        console.log(JSON.parse(data));
+      }  
+  }, [])
+
+  useEffect(() =>{
+    localStorage.setItem('task', JSON.stringify(tasksItems));
+  }, [tasksItems])
 
   return (
     <div className="App">
