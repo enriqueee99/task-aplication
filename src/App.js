@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { TaskCreator } from "./components/TaskCreator";
+import { TaskTable} from "./components/TaskTable";
 
 function App() {
 //elimine los objetos de ejemplo
@@ -16,37 +16,21 @@ function createNewTask(taskName) {
   }
 }
   useEffect(() =>{
-      let data = localStorage.getItem('task') //si hay algo en LS, conviertelo a js
+      let data = localStorage.getItem('tasks') // leera los datos y si hay algo en LS, conviertelo a js
       if(data){
-        console.log(JSON.parse(data));
+        setTaskItems(JSON.parse(data));
       }  
   }, [])
 
-  useEffect(() =>{
-    localStorage.setItem('task', JSON.stringify(tasksItems));
+  useEffect(() =>{  //useefet se ejecuta cada que cambia una variable TaskItems
+    localStorage.setItem('tasks', JSON.stringify(tasksItems));
   }, [tasksItems])
 
   return (
     <div className="App">
-     <TaskCreator createNewTask = {createNewTask} />
-     <table>
-      <thead>
-        <tr>
-          <th>tasks</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-        tasksItems.map(task  =>(
-          <tr key={task.name}>
-            <td>
-            {task.name}
-            </td>
-          </tr>
-        ))
-        }
-      </tbody>
-     </table>
+    <TaskCreator createNewTask = {createNewTask} />
+    <TaskTable tasks = {tasksItems}/>
+
     </div>
   );
 }
