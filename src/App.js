@@ -15,6 +15,14 @@ function createNewTask(taskName) {
     alert('esta tarea ya esta creada')
   }
 }
+
+
+  const toggleTask = task =>{
+    setTaskItems(
+      tasksItems.map((t) => (t.name === task.name) ? {...t, done: !t.done} : t
+    )
+  )}
+
   useEffect(() =>{
       let data = localStorage.getItem('tasks') // leera los datos y si hay algo en LS, conviertelo a js
       if(data){
@@ -29,7 +37,7 @@ function createNewTask(taskName) {
   return (
     <div className="App">
     <TaskCreator createNewTask = {createNewTask} />
-    <TaskTable tasks = {tasksItems}/>
+    <TaskTable tasks = {tasksItems} toggleTask = {toggleTask}/>
 
     </div>
   );

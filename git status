@@ -1,0 +1,23 @@
+[33mcommit 84c4a9c2aeec85b7d659b7720d80776f0e5d79fe[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Anthony Enrique <enriqueee99@gmail.com>
+Date:   Tue Apr 9 20:49:05 2024 -0500
+
+    ahora no se borran los datos del localstorage
+
+[33mcommit 8ac05949aa29706409b39cd28f9edb7451aa7a41[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Anthony Enrique <enriqueee99@gmail.com>
+Date:   Mon Apr 8 21:30:32 2024 -0500
+
+    working to localstorge
+
+[33mcommit 9628e162214e8145368a7719d4cd6ea3ce764782[m
+Author: Anthony Enrique <enriqueee99@gmail.com>
+Date:   Mon Apr 8 19:25:59 2024 -0500
+
+    taskCreator creado y enlistar tareas
+
+[33mcommit 77c9515b13c0333474f2c530ca08010a1dab3504[m
+Author: Anthony Enrique <enriqueee99@gmail.com>
+Date:   Sun Mar 31 21:26:55 2024 -0500
+
+    Initialize project using Create React App
