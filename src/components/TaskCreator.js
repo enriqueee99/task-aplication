@@ -12,14 +12,20 @@ export const TaskCreator = ({createNewTask}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form onSubmit={handleSubmit} className="my-2 row">
+      <div className="col-9">
+      <input 
         placeholder="enter to task"
         value={newTaskName} // para limpiar el input,
         onChange={(e) => setNewTaskName(e.target.value)}
+        className='fdorm-control'
       ></input>
+      </div>
 
-      <button>save task</button>
+    <div className="col-3">
+    <button className="btn btn-primary btn-sm">save task</button>
+    </div>
+      
     </form>
   );
 };

@@ -3,6 +3,7 @@ import "./App.css";
 import { TaskCreator } from "./components/TaskCreator";
 import { TaskTable} from "./components/TaskTable";
 import { VisibilityControl } from "./components/VisibilityControl";
+import { Container } from "./components/Container";
 
 function App() {
 //elimine los objetos de ejemplo
@@ -40,8 +41,9 @@ function createNewTask(taskName) {
   }, [tasksItems])
 
   return (
-    <div className="App">
-    <TaskCreator createNewTask = {createNewTask} />
+    <main className="bg-dark vh-100 text-white">
+      <Container>
+      <TaskCreator createNewTask = {createNewTask} />
     
     <TaskTable tasks = {tasksItems} toggleTask = {toggleTask}/>
     <VisibilityControl 
@@ -55,7 +57,9 @@ function createNewTask(taskName) {
         <TaskTable tasks = {tasksItems} toggleTask = {toggleTask} showCompleted={showCompleted}/>
       )
     }
-    </div>
+    
+      </Container>
+    </main>
   );
 }
 
